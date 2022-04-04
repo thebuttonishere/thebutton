@@ -2,8 +2,30 @@
 <html>
     <head>
         <title>The Button Awaits.</title>
+        <style>
+            body {
+            background-image: url('replace');
+            }
     </head>
     <body>
         <p>Press the button to send a message in #🔘-press-da-button to show that you have indeed, pressed that button. (DO NOT USE AN AUTOCLICKER OR THE SERVER MAY GET INTO TROUBLE WITH DISCORD.)</p>
+        <button onclick="sendMessage()">Press The Button!</button>
     </body>
+    <script>
+
+    function sendMessage() {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/960652993441701929/pv0peeIDG-UTiKYyEqAT-oi_LLQUlq7x_79yxXApodjmkQEwO-gNmp90Nk6d4wUvq65o");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "The Button",
+        avatar_url: "",
+        content: "The button has been pressed!"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
 </html>
